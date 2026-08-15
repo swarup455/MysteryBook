@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+:root {
+  /* Burnt sienna palette: #E35336 / #F5F5DC / #F4A460 / #A0522D */
+  --background: 60 56% 91%;      /* #F5F5DC beige */
+  --foreground: 19 56% 16%;      /* dark sienna ink, readable on beige */
+
+  --card: 60 60% 96%;            /* lighter beige surface */
+  --card-foreground: 19 56% 16%;
+
+  --primary: 10 76% 55%;         /* #E35336 burnt sienna */
+  --primary-foreground: 60 56% 96%;
+
+  --secondary: 28 70% 90%;       /* soft sandy tint */
+  --secondary-foreground: 19 56% 22%;
+
+  --muted: 60 30% 92%;
+  --muted-foreground: 19 20% 40%;
+
+  --accent: 28 87% 84%;          /* #F4A460 sandy, lightened */
+  --accent-foreground: 19 56% 20%;
+
+  --border: 25 30% 82%;
+  --input: 25 30% 82%;
+  --ring: 10 76% 45%;
+
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-feature-settings: "cv11", "ss01";
+  }
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+.field-grid {
+  background-image: radial-gradient(
+    hsl(var(--primary) / 0.14) 1px,
+    transparent 1px
+  );
+  background-size: 28px 28px;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
