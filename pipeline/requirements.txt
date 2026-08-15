@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+rq
+redis
+supabase
+python-dotenv
+httpx
+trafilatura
+pydantic
